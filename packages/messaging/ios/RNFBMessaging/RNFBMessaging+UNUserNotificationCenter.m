@@ -86,11 +86,11 @@ struct {
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
   NSDictionary *remoteNotification = response.notification.request.content.userInfo;
-  if (remoteNotification[@"gcm.message_id"]) {
+//   if (remoteNotification[@"gcm.message_id"]) {
     NSDictionary *notificationDict = [RNFBMessagingSerializer remoteMessageUserInfoToDict:remoteNotification];
     [[RNFBRCTEventEmitter shared] sendEventWithName:@"messaging_notification_opened" body:notificationDict];
     _initialNotification = notificationDict;
-  }
+//   }
 
   if (_originalDelegate != nil && originalDelegateRespondsTo.didReceiveNotificationResponse) {
     [_originalDelegate userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
