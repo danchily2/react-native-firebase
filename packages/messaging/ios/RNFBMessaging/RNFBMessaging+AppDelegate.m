@@ -129,7 +129,7 @@
       postNotificationName:@"RNFBMessagingDidReceiveRemoteNotification"
                     object:userInfo];
 
-  if (userInfo[@"gcm.message_id"]) {
+  // if (userInfo[@"gcm.message_id"]) {
     DLog(@"didReceiveRemoteNotification gcm.message_id was present %@", userInfo);
 
     if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
@@ -216,7 +216,7 @@
                        body:[RNFBMessagingSerializer remoteMessageUserInfoToDict:userInfo]];
       completionHandler(UIBackgroundFetchResultNoData);
     }
-  }
+  // }
 }
 
 @end
