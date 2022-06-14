@@ -32,7 +32,7 @@ import {
 } from '@react-native-firebase/app/lib/internal';
 import { AppRegistry } from 'react-native';
 import remoteMessageOptions from './remoteMessageOptions';
-import version from './version';
+// import version from './version';
 
 const statics = {
   AuthorizationStatus: {
@@ -431,7 +431,7 @@ class FirebaseMessagingModule extends FirebaseModule {
 }
 
 // import { SDK_VERSION } from '@react-native-firebase/messaging';
-export const SDK_VERSION = version;
+export const SDK_VERSION = '14.11.0';
 
 // import messaging from '@react-native-firebase/messaging';
 // messaging().X(...);
